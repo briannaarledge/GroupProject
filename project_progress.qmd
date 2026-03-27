@@ -1,6 +1,6 @@
 ---
 title: "Genetics Project Progress"
-author: "Group Members: [Names Here]"
+author: "Group Members: Natalie Karten, Lorna Darling, and Brianna Arledge"
 format: html
 ---
 
