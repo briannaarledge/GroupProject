@@ -1,0 +1,24 @@
+---
+title: "Genetics Project Progress"
+author: "Group Members: [Names Here]"
+format: html
+---
+
+## Project Goals
+Our project aims to...
+
+## Resources Consulted
+- Article:
+- Website:
+- Textbook:
+
+## Progress So Far
+We have:
+- Researched...
+- Collected data on...
+- Began analysis...
+
+## Initial Code/Data
+```{python}
+# Example code
+print("Hello project")
