@@ -5,18 +5,12 @@ format: html
 ---
 
 ## Project Goals
-Our project aims to...
+Our project aims to write a program to record the voltage output from a scientific instrument as a function of time, and to plot the output in a graph. We will be making three variations of graphs. 
 
-## Resources Consulted
-- Article:
-- Website:
-- Textbook:
+Brianna Arledge's goal is to write the code for the linear variation of the graph.
 
-## Progress So Far
-We have:
-- Researched...
-- Collected data on...
-- Began analysis...
+## Resources
+insert resources here!
 
 ## Initial Code/Data
 ```{python}
