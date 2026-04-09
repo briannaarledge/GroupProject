@@ -2,7 +2,7 @@
 title: "Genetics Project Progress"
 author: "Group Members: Natalie Karten, Lorna Darling, and Brianna Arledge"
 format: html
-bibliography: references.bib
+bibliography: Exported Items.bib
 csl: nature.csl
 ---
 
@@ -22,3 +22,4 @@ plt.ylabel("Voltage")
 plt.title("Voltage vs Time")
 plt.show()
 ```
+[@matplotlib_pyplot_2025]
