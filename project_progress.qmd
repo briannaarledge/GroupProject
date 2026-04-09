@@ -9,10 +9,18 @@ Our project aims to write a program to record the voltage output from a scientif
 
 Brianna Arledge's goal is to write the code for the linear variation of the graph.
 
+## Linear Graph
+
+```{python}
+import matplotlib.pyplot as plt
+x = [1, 2, 3]
+y = [1, 2, 3]
+plt.plot (x,y)
+plt.xlabel("title here")
+plt.ylabel("title here")
+plt.title("")
+plt.show()
+```
+
 ## Resources
 insert resources here!
-
-## Initial Code/Data
-```{python}
-# Example code
-print("Hello project")
