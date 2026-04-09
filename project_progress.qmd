@@ -23,3 +23,13 @@ plt.title("Voltage vs Time")
 plt.show()
 ```
 [@matplotlib_pyplot_2025]
+
+## Pie Graph
+```{python}
+
+```
+
+## Bar Graph
+```{python}
+
+```
