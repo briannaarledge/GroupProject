@@ -24,7 +24,7 @@ plt.show()
 ```
 [@matplotlib_pyplot_2025]
 
-## Pie Graph
+## Pie Graph, this is the graph I plan on coding for - natie karten
 ```{python}
 
 ```
