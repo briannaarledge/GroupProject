@@ -29,7 +29,7 @@ plt.show()
 
 ```
 
-## Bar Graph
+## Bar Graph, this is the graph I plan on coding for - Lorna Darling 
 ```{python}
 
 ```
