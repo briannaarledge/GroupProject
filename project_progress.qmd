@@ -15,10 +15,16 @@ Brianna Arledge's goal is to write the code for the linear variation of the grap
 ```{python}
 import matplotlib.pyplot as plt
 import pandas as pd 
-df = pd.read_csv('Methyl Stearate.xy')
-plt.plot (x,y)
+df = pd.read_csv('Methyl Stearate.xy', sep = r"\s+", engine = "python", header = None)
+df.columns = ["Time", "Voltage"]
+print(df.head(10))
+print(df.shape)
+print(df.dtypes)
+plt.plot (df["Time"], df["Voltage"])
 plt.xlabel("Time")
 plt.ylabel("Voltage")
+plt.xlim(0, 31)
+plt.ylim(46, 60)
 plt.title("Voltage vs Time")
 plt.show()
 ```
