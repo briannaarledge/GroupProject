@@ -14,8 +14,8 @@ Brianna Arledge's goal is to write the code for the linear variation of the grap
 ## Linear Graph
 ```{python}
 import matplotlib.pyplot as plt
-x = [1, 2, 3]
-y = [1, 2, 3]
+import pandas as pd 
+df = pd.read_csv('Methyl Stearate.xy')
 plt.plot (x,y)
 plt.xlabel("Time")
 plt.ylabel("Voltage")
