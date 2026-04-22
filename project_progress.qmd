@@ -20,9 +20,9 @@ df.columns = ["Time", "Voltage"]
 plt.plot (df["Time"], df["Voltage"])
 plt.xlabel("Time")
 plt.ylabel("Voltage")
-plt.xlim(0, 31)
-plt.ylim(46, 60)
-plt.title("Voltage vs Time")
+plt.xlim(18, 19)
+plt.ylim(46, 56)
+plt.title("Methyl Stearate Peak")
 plt.show()
 ```
 [@matplotlib_pyplot_2025]
