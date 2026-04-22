@@ -17,9 +17,6 @@ import matplotlib.pyplot as plt
 import pandas as pd 
 df = pd.read_csv('Methyl Stearate.xy', sep = r"\s+", engine = "python", header = None)
 df.columns = ["Time", "Voltage"]
-print(df.head(10))
-print(df.shape)
-print(df.dtypes)
 plt.plot (df["Time"], df["Voltage"])
 plt.xlabel("Time")
 plt.ylabel("Voltage")
