@@ -26,7 +26,7 @@ plt.title("Methyl Stearate Peak")
 plt.show()
 ```
 
-# The matplotlib and the pandas are libaries and they are being imported on lines 16 and 17. The matplot is used to make the graph whiel the pandas is used to load and organize the data into the graph. 
+# The matplotlib and the pandas are libaries and they are being imported on lines 16 and 17. The matplot is used to make the graph while the pandas is used to load and organize the data into the graph. 
 # Line 18 creates a DataFrame. It has pd.read_csv to read the data file Methyl Stearate.xy, while sep = r"\s+" indicates that the data values are seperated by one or several spaces. Having the engine equal to python let's the program interpret the inconsistant spacing in the file, while having the header equal none to show the file starts with data and does not contain column titles. 
 # Lines 19 through 26 create the plot. The df.columns label the two columns in the file to be set as x and y values. The plt.plot plots the columns on an x-axis and a y-axis. Lines 21 and 22 create the labels for the x and y axis. A specific peak of the plot is zoomed in by using the xlim and ylim on lines 23 and 24 to define the start and stop point of the x- and y-axis. The plot is given the title of Methyl Stearate Peak and is told to show the plot.
 # The peak on the plot stands for methyl stearate and will be used to determine the area under the peak as well as the retention time. 
@@ -101,7 +101,7 @@ area <- sum(area_calculation$trapezoid_area, na.rm = TRUE)
 print(area)
 ```
 
-## Surface Area
+## Raw Surface Area
 ```{python}
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -137,3 +137,64 @@ plt.ylim(46, 56)
 plt.legend()
 plt.show()
 ```
+# In Gas Chromatography, peak area is proportional to the amount of compound present which is used for quantitative analysis. 
+# The area was initially calculated directly from the raw signal, but a more accurate measurement would have been done if a baseline correction was coded for. Since there was no baseline correction, the measured area was higher than expected. 
+# There were three imported libraries that was used. matplotlib.pyplot was used to make the graph, pandas was used to read/ organize the data, and numpy was used for calculations. This was to visualize and calculate the area.
+# The data was uploaded from the CSV. The columns were then labeled as time was for the retention time and voltage was the detector response. To isolate the methyl stearate peak, the time between 18 and 19 minutes was estimated. 
+# The trapezoidal rule was used instead of reimann sums or other ways to calculate the area because it was more accurate. 
+# The peak was plotted and the area underneath the peak was shaded for easy visualization. The last lines were dedicated too labeling and formatting the graph. 
+
+## Baseline Correction Surface Area
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Load data
+df = pd.read_csv('Methyl Stearate.xy', sep=r"\s+", engine="python", header=None)
+
+# Label columns
+df.columns = ["Time", "Voltage"]
+
+# Filter for methyl stearate peak (18.3–18.5 min)
+df_peak = df[(df["Time"] >= 18.3) & (df["Time"] <= 18.5)]
+
+# Convert to NumPy arrays
+x = df_peak["Time"].values
+y = df_peak["Voltage"].values
+
+# Create linear baseline
+x_start, x_end = x[0], x[-1]
+y_start, y_end = y[0], y[-1]
+
+baseline = y_start + (y_end - y_start) * (x - x_start) / (x_end - x_start)
+
+# Subtract baseline
+y_corrected = y - baseline
+
+# Compute areas
+area_raw = np.trapezoid(y, x)
+area_corrected = np.trapezoid(y_corrected, x)
+
+print("Raw area:", area_raw)
+print("Baseline-corrected area:", area_corrected)
+
+# Plot
+plt.plot(x, y, label="Original Signal")
+plt.plot(x, baseline, '--', label="Baseline")
+
+# Shade corrected area
+plt.fill_between(x, y_corrected, alpha=0.3, label="Corrected Area")
+
+plt.xlabel("Time")
+plt.ylabel("Voltage")
+plt.title("Methyl Stearate Peak with Baseline Correction")
+
+plt.xlim(18, 19)
+plt.legend()
+
+plt.show()
+```
+# To do a baseline correction, the start and end points of the peak must be addressed. Creating a linear baseline makes a line that connects the edges of the peak. In Gas Chromatography, most baseline drifts are slow and relatively linear. 
+# The baseline needed to be subtracted to only isolate the methyle stearate peak. This removes the baseline value from each data point. Line 177 is important as the area will then only represent the compound signal and not the detector drift. 
+# Without the baseline correction, the area is too large which could overestimate the concentration. With the baseline correction, the area is more accurate and he results are reproducible. 
