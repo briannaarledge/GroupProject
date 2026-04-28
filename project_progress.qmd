@@ -28,7 +28,7 @@ plt.show()
 
 # The matplotlib and the pandas are libaries and they are being imported on lines 16 and 17. The matplot is used to make the graph whiel the pandas is used to load and organize the data into the graph. 
 # Line 18 creates a DataFrame. It has pd.read_csv to read the data file Methyl Stearate.xy, while sep = r"\s+" indicates that the data values are seperated by one or several spaces. Having the engine equal to python let's the program interpret the inconsistant spacing in the file, while having the header equal none to show the file starts with data and does not contain column titles. 
-# Lines 19 through 26 create the plot. The df.columns label the two columns in the file to be set as x and y values. The plt.plot plots the columns on an x-axis and a y-axis. Lines 21 and 22 create the labels for the x and y axis. A specific peak of the plot is zoomed in by using the xlim and ylim to define the start and stop point of the x- and y-axis. The plot is given the title of Methyl Stearate Peak and is told to show the plot.
+# Lines 19 through 26 create the plot. The df.columns label the two columns in the file to be set as x and y values. The plt.plot plots the columns on an x-axis and a y-axis. Lines 21 and 22 create the labels for the x and y axis. A specific peak of the plot is zoomed in by using the xlim and ylim on lines 23 and 24 to define the start and stop point of the x- and y-axis. The plot is given the title of Methyl Stearate Peak and is told to show the plot.
 # The peak on the plot stands for methyl stearate and will be used to determine the area under the peak as well as the retention time. 
 [@matplotlib_pyplot_2025]
 
