@@ -1,0 +1,36 @@
+## Surface Area Code
+```{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# Load the data
+df = pd.read_csv('Methyl Stearate.xy', sep=r"\s+", engine="python", header=None)
+
+# Label columns
+df.columns = ["Time", "Voltage"]
+
+# Filter for peak region (18.3 to 18.5)
+df_peak = df[(df["Time"] >= 18.3) & (df["Time"] <= 18.5)]
+
+# Compute area under the curve
+area = np.trapezoid(df_peak["Voltage"], df_peak["Time"])
+print("Area under the curve:", area)
+
+# Plot the data
+plt.plot(df_peak["Time"], df_peak["Voltage"], label="Peak")
+
+# Shade the area
+plt.fill_between(df_peak["Time"], df_peak["Voltage"], alpha=0.3)
+
+# Label and Format
+plt.xlabel("Time")
+plt.ylabel("Voltage")
+plt.title("Methyl Stearate Peak")
+
+plt.xlim(18, 19)
+plt.ylim(46, 56)
+
+plt.legend()
+plt.show()
+```
