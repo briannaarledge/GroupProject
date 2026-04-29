@@ -188,5 +188,5 @@ plt.legend()
 plt.show()
 ```
 # To do a baseline correction, the start and end points of the peak must be addressed. Creating a linear baseline makes a line that connects the edges of the peak. In Gas Chromatography, most baseline drifts are slow and relatively linear. 
-# The baseline needed to be subtracted to only isolate the methyle stearate peak. This removes the baseline value from each data point. Line 177 is important as the area will then only represent the compound signal and not the detector drift. 
+# The baseline needed to be subtracted to only isolate the methyle stearate peak. This removes the baseline value from each data point. Line 169 is important as the area will then only represent the compound signal and not the detector drift. 
 # Without the baseline correction, the area is too large which could overestimate the concentration. With the baseline correction, the area is more accurate and he results are reproducible. 
